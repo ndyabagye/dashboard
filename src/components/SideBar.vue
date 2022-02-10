@@ -57,7 +57,6 @@ export default {
     };
   },
 };
-console.log(Dashboard);
 </script>
 
 <style>
