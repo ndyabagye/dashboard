@@ -15,7 +15,7 @@ import RightBar from '@/components/RightBar.vue';
 <style scoped>
 .main {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 0.9fr 2fr 1fr;
   /* padding: 0.4rem; */
 }
 </style>
