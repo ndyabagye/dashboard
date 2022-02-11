@@ -31,13 +31,13 @@
     <!-- activity info -->
     <div class="activity ps-5">
       <div class="title d-flex flex-column">
-        <h2>Latest Activity</h2>
+        <h4>Latest Activity</h4>
         <p class="text-muted fs-6">Updated 12 minutes ago</p>
       </div>
       <div class="edit d-flex flex-column justify-content-center">
         <br />
         <br />
-        <p class="ps-5 text-decoration-underline">edit</p>
+        <p class="ps-5 text-muted text-decoration-underline">edit</p>
       </div>
       <div class="icons d-flex flex-row">
         <!-- clog -->
@@ -86,6 +86,7 @@ import ActivityInfo from '@/components/ActivityInfo.vue';
 import Bitcoin from '@/svg/bitcoin.svg';
 import Ethereum from '@/svg/ethereum.svg';
 import Litecoin from '@/svg/litecoin.svg';
+
 export default {
   components: {
     Search,
