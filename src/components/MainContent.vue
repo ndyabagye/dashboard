@@ -31,7 +31,7 @@
     <!-- activity info -->
     <div class="activity ps-5">
       <div class="title d-flex flex-column">
-        <h4>Latest Activity</h4>
+        <h3>Latest Activity</h3>
         <p class="text-muted fs-6">Updated 12 minutes ago</p>
       </div>
       <div class="edit d-flex flex-column justify-content-center">
