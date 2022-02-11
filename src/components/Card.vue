@@ -18,10 +18,10 @@
     <div class="body m-2">
         <img :src="svg" alt="">
     </div>
-    <div class="currency-info d-flex flex-column">
-      <h3>
+    <div class="currency-info d-flex flex-column mt-2">
+      <h4>
         {{ btc }}
-      </h3>
+      </h4>
       <h5>
         {{ usd }}
       </h5>
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style>
-h3,h5{
+h4,h5{
     color:#514e86
 }
 </style>
