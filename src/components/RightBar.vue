@@ -27,10 +27,22 @@
     />
     <div class="new-transfer rounded me-3 p-2">
       <div class="plus bg-white">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#227ffb" width="18" height="18" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z"/></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#227ffb"
+          width="18"
+          height="18"
+          viewBox="0 0 512 512"
+        >
+          <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+          <path
+            d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z"
+          />
+        </svg>
       </div>
-      <div class="d-flex ms-5 flex-row justify-content-around align-items-center">
-
+      <div
+        class="d-flex ms-5 flex-row justify-content-around align-items-center"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24"
@@ -48,17 +60,33 @@
       <div></div>
     </div>
 
-    <div class="d-flex flex-row  my-4">
-      <h6 class="fs-3">Wallet</h6>
+    <div class="d-flex flex-row my-4">
+      <h6 class="fs-3">Wallets</h6>
     </div>
+    <Wallet
+      v-for="wallet in walletData"
+      :key="wallet.id"
+      :textColor="wallet.textColor"
+      :title="wallet.title"
+      :subtitle="wallet.subtitle"
+      :percent="wallet.percent"
+      :subpercent="wallet.subpercent"
+      :svg="wallet.svg"
+    />
   </div>
 </template>
 
 <script>
 import Profile from '../img/profile.png';
 import PaymentCard from './Payments/PaymentCard.vue';
+import Wallet from './Wallets/Wallet.vue';
 import Litecoin from '../svg/litecoin-solid.svg';
-import Link from '../svg/link.svg';
+import Link from '@/svg/link.svg';
+// wallet svg
+import BTE from '../img/BTE.png';
+import DAI from '../img/DAI.png';
+import XRP from '../img/XRP.png';
+import USDT from '../img/USDT.png';
 
 export default {
   data() {
@@ -70,6 +98,7 @@ export default {
           date: '09/08/2020 19:22',
           btc: '+ 15.08 USD',
           svg: Litecoin,
+          color: '#f6886e',
         },
         {
           id: 'Link',
@@ -77,21 +106,61 @@ export default {
           date: '09/08/2020 19:22',
           btc: '+ 957.96 USD',
           svg: Link,
+          color: '#3bdfc2',
+        },
+      ],
+      walletData: [
+        {
+          id: 'BTE',
+          title: 'BTE',
+          subtitle: 'Bitcoin',
+          percent: '37%',
+          subpercent: '-2.5%',
+          svg: BTE,
+          textColor:'#81e5c7',
+        },
+        {
+          id: 'DAI',
+          title: 'DAI',
+          subtitle: 'Dai',
+          percent: '23%',
+          subpercent: '+7.2%',
+          svg: DAI,
+          textColor:"#64557f",
+        },
+        {
+          id: 'XRP',
+          title: 'XRP',
+          subtitle: 'Ripple',
+          percent: '20%',
+          subpercent: '-3.1%',
+          svg: XRP,
+          textColor:'#81e5c7',
+        },
+        {
+          id: 'USDT',
+          title: 'USDT',
+          subtitle: 'Tether',
+          percent: '17%',
+          subpercent: '-1.8%',
+          svg: USDT,
+          textColor:"#64557f",
         },
       ],
       Profile,
     };
   },
   components: {
+    Wallet,
     PaymentCard,
   },
 };
 </script>
 
 <style>
-.new{
-color:#6961a9;
-width: 100px;
+.new {
+  color: #6961a9;
+  width: 100px;
 }
 
 .new-transfer {
@@ -105,7 +174,7 @@ width: 100px;
 }
 .nav-info {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr!important;
+  grid-template-columns: 1fr 2fr 1fr !important;
 }
 .right-bar {
   background-color: #f9faff;
