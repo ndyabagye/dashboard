@@ -1,11 +1,11 @@
 <template>
-  <div class="card mb-3 me-3">
+  <div class="card mb-3 me-3 shadow">
     <div class="card-top mt-2 mb-3">
-      <div class="card-icon">
+      <div class="card-icon ms-2" v-bind:style="{ backgroundColor: color }">
         <img :src="svg" alt="" />
       </div>
-      <div class="card-text d-flex flex-row">
-        <h6 class="fs-6">Received {{ title }}</h6>
+      <div class="card-text d-flex flex-row align-items-center ms-2">
+        <h6 class="fs-6 me-3">Received {{ title }}</h6>
         <font-awesome-icon icon="fa-solid fa-chevron-down" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,19 +22,23 @@
         <!-- icon -->
       </div>
       <div class="card-price">
-        <h6 class="fs-6 text-sm text-muted p-1 shadow rounded me-2">{{ btc }}</h6>
+        <h6 class="fs-6 text-sm text-muted p-1 shadow rounded me-2">
+          {{ btc }}
+        </h6>
       </div>
     </div>
-    <div class="card-bottom my-2 ms-5 flex-row align-items-end justify-content-between">
-        <div class="date">
-            <br>
-            <h6 class="fs-6 text-muted">
-            {{date}}
-            </h6>
-        </div>
-        <div class="people ms-5">
-            <img :src="image" class="img-fluid peopleImage" alt="" />
-        </div>
+    <div
+      class="card-bottom my-2 ms-5 flex-row align-items-end justify-content-between"
+    >
+      <div class="date">
+        <br />
+        <h6 class="fs-6 text-muted">
+          {{ date }}
+        </h6>
+      </div>
+      <div class="people ms-5">
+        <img :src="image" class="img-fluid peopleImage" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -43,36 +47,44 @@
 import image from '../../img/profile.svg';
 
 export default {
-    props: {
-        title: String,
-svg: String,
-date: String,
-btc: String,
-},
-    data(){
-        return{
-
-  image
-      }
-  }
+  props: {
+    title: String,
+    svg: String,
+    date: String,
+    btc: String,
+    color: String,
+  },
+  data() {
+    return {
+      image,
+    };
+  },
 };
 </script>
 
 <style>
-.peopleImage{
-    height: 60px;
-    width: 60px;
+.card-icon{
+  height: 50px;
+  width:50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.card-bottom{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.peopleImage {
+  height: 60px;
+  width: 60px;
+}
+.card-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .card-top {
   display: grid;
   grid-template-columns: 1.2fr 3fr 2fr;
 }
 
-.card-price{
-    width: 100px;
+.card-price {
+  width: 100px;
 }
 </style>
