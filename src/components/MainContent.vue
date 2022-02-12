@@ -12,6 +12,12 @@
         :svg="card.svg"
       />
     </div>
+    <div class="hr px-5 mx-5 mt-2">
+    <hr style="background-color:#f7f8fa; color:#f7f8fa; height: 6px; border-radius: 10px ">
+    <hr style="background-color: #181df8 !important; color: #181df8 !important; height: 6px;  border-radius: 10px">
+    <hr style="background-color:#f7f8fa; color:#f7f8fa; height: 6px; border-radius: 10px ">
+    </div>
+
     <!-- svg -->
     <div class="downArrow d-flex flex-row justify-content-center">
       <svg
@@ -243,6 +249,10 @@ export default {
 </script>
 
 <style>
+.hr{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 label {
   color: #52489d !important;
 }

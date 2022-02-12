@@ -25,7 +25,7 @@
       :date="payment.date"
       :svg="payment.svg"
     />
-    <div class="new-transfer rounded me-3 p-2">
+    <div class="new-transfer me-3 p-2">
       <div class="plus bg-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -167,6 +167,7 @@ export default {
   background-color: #d8d7eb;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 10px !important;
 }
 .profile {
   height: 50px;

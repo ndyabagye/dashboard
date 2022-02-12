@@ -1,5 +1,5 @@
 <template>
-  <div class="card mb-3 me-3 shadow">
+  <div class="card p-1 mb-3 me-3 shadow">
     <div class="card-top mt-2 mb-3">
       <div class="card-icon ms-2" v-bind:style="{ backgroundColor: color }">
         <img :src="svg" alt="" />
@@ -63,6 +63,9 @@ export default {
 </script>
 
 <style>
+.card{
+  border-radius: 8px !important;
+}
 .card-icon{
   height: 50px;
   width:50px;
