@@ -12,10 +12,32 @@
         :svg="card.svg"
       />
     </div>
+    <!-- hr section -->
     <div class="hr px-5 mx-5 mt-2">
-    <hr style="background-color:#f7f8fa; color:#f7f8fa; height: 6px; border-radius: 10px ">
-    <hr style="background-color: #181df8 !important; color: #181df8 !important; height: 6px;  border-radius: 10px">
-    <hr style="background-color:#f7f8fa; color:#f7f8fa; height: 6px; border-radius: 10px ">
+      <hr
+        style="
+          background-color: #f7f8fa;
+          color: #f7f8fa;
+          height: 6px;
+          border-radius: 10px;
+        "
+      />
+      <hr
+        style="
+          background-color: #181df8 !important;
+          color: #181df8 !important;
+          height: 6px;
+          border-radius: 10px;
+        "
+      />
+      <hr
+        style="
+          background-color: #f7f8fa;
+          color: #f7f8fa;
+          height: 6px;
+          border-radius: 10px;
+        "
+      />
     </div>
 
     <!-- svg -->
@@ -121,53 +143,61 @@
             aria-label="Close"
           ></button> -->
         </div>
-        <div class="modal-body">
-          <!-- select dropdown -->
-          <label for="service">Service</label>
-          <select
-            id="service"
-            class="form-select mb-4"
-            aria-label="Default service example"
-          >
-            <option selected>Select service</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <!-- wallet dropdown -->
-          <label for="wallet">Wallet</label>
-          <select
-            id="wallet"
-            class="form-select mb-4"
-            aria-label="Default wallet example"
-          >
-            <option selected>Select wallet</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <!-- amount input -->
-          <label for="input">Amount</label>
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder=""
-              aria-label="Amount"
-              aria-describedby="basic-addon1"
-            />
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="modal-body">
+            <!-- select dropdown -->
+            <label for="service">Service</label>
+            <select
+              id="service"
+              class="form-select mb-4"
+              aria-label="Default service example"
+              required
+            >
+              <option selected>Select service</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="invalid-feedback">Please select a Service.</div>
+            <!-- wallet dropdown -->
+            <label for="wallet">Wallet</label>
+            <select
+              id="wallet"
+              class="form-select mb-4"
+              aria-label="Default wallet example"
+              required
+            >
+              <option selected>Select wallet</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="invalid-feedback">Please select a Payment Wallet.</div>
+            <!-- amount input -->
+            <label for="input">Amount</label>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                aria-label="Amount"
+                aria-describedby="basic-addon1"
+                required
+              />
+            </div>
+            <div class="invalid-feedback">Please enter an amount.</div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-outline-danger"
-            data-bs-dismiss="modal"
-          >
-            Cancel
-          </button>
-          <button type="button" class="btn pay">Pay</button>
-        </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn pay">Pay</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -227,7 +257,7 @@ export default {
           date: '7 Jun 2021',
           payment: 'Last payment',
           balance: '-10.24 LTC',
-          color:"#e8edf6",
+          color: '#e8edf6',
           svg: Insurance,
         },
         {
@@ -239,7 +269,7 @@ export default {
           date: '9 Jun 2021',
           payment: 'Last payment',
           balance: '-3.543 ETH',
-          color: "#ffefe9",
+          color: '#ffefe9',
           svg: Electricity,
         },
       ],
@@ -249,7 +279,7 @@ export default {
 </script>
 
 <style>
-.hr{
+.hr {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
